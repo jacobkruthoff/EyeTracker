@@ -1,4 +1,4 @@
-function testFunc() {
+export function testFunc() {
   let button = document.createElement("button");
   document.append(button);
 
