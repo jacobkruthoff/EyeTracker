@@ -7,7 +7,7 @@
     <title>Test EyeTracker</title>
 
     <script src="https://webgazer.cs.brown.edu/webgazer.js?" defer ></script>
-    <script src="./stuff.js" defer></script>
+    <script src="./controller.js" defer></script>
 
     <!-- styling-->
     <style>
@@ -16,12 +16,6 @@
         display: flex;
         justify-content: center;
         overflow: hidden;
-      }
-      form {
-        width: 100px;
-        height: 50px;
-        display: block;
-        text-align: center;
       }
       img {
         width: 50vw;
@@ -46,19 +40,15 @@
 
 
 <body>
-  <!-- link to upload qualtrics survey-->
-
-  <form id="formID" class="form"> 
-    <label for="link"> Survey link </label>
-    <input id="linkInput" type="text"><br>
-  </form>
 
 
+  <!-- Link to upload Qualtrics survey-->
   <iframe src="https://pointloma.co1.qualtrics.com/jfe/form/SV_9zVotUnXg2t0Phs" width="100%" height="500000">
     
   </iframe>
 </body>
 
+<!-- WIP -->
 <script>
   (() => {
     document.addEventListener(() => {
