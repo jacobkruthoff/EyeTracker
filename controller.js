@@ -74,3 +74,13 @@ function webGazeListen() {
 //Start tracking
 console.log("STARTING");
 run();
+
+//while pictures are present
+//callback gaze listener
+//pause listener on image transitions
+
+//wrap listener in timeout function
+//on dom content loaded, start timer
+// after 30 seconds, pause data collection
+
+
