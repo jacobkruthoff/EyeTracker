@@ -1,3 +1,4 @@
+const nodemailer = require('nodemailer');
 window.saveDataAcrossSessions = true
 // array to store webgazer data
 // init with headers
@@ -19,6 +20,29 @@ function pausing() {
     webgazer.pause();
     //export data
     //do array here!
+}
+
+async function sendData(){
+
+  let testAccount = await nodemailer.createTestAccount();
+
+  let transport = nodemailer.createTransport({
+    host: "smtp.gmail.email",
+    port: 587,
+    secure: false,
+    auth:{
+      user: "plnueyetracker@gmail.com",
+      pass: "webgazerintegration",
+    }
+  });
+
+  let email = await transport.sendMail({
+    from: "plnueyetracker@gmail.com",
+    to: "ssoutherland5896@pointloma.edu",
+    subject: "test",
+    text: "did this work",
+    html: "<b>HELLLLOOOOO</b>",
+  });
 }
 
 function run(){
@@ -74,6 +98,7 @@ function webGazeListen() {
 //Start tracking
 console.log("STARTING");
 run();
+sendData();
 
 //while pictures are present
 //callback gaze listener
