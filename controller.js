@@ -24,8 +24,6 @@ function pausing() {
 
 async function sendData(){
 
-  let testAccount = await nodemailer.createTestAccount();
-
   let transport = nodemailer.createTransport({
     host: "smtp.gmail.email",
     port: 587,
@@ -38,12 +36,15 @@ async function sendData(){
 
   let email = await transport.sendMail({
     from: "plnueyetracker@gmail.com",
-    to: "ssoutherland5896@pointloma.edu",
+    to: "yacomctaco@gmail.com",
     subject: "test",
     text: "did this work",
     html: "<b>HELLLLOOOOO</b>",
   });
+
+  console.log("message sent: %s", email.messageId)
 }
+sendData();
 
 function run(){
   //this is just webgazer running, not storing data in CSV format
@@ -98,7 +99,6 @@ function webGazeListen() {
 //Start tracking
 console.log("STARTING");
 run();
-sendData();
 
 //while pictures are present
 //callback gaze listener
